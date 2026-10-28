@@ -10,7 +10,7 @@ plugins:
       handlers:
         python:
           paths:
-            - src
+            - .
 
 nav:
   - Inicio: index.md
