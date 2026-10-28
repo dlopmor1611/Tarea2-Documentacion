@@ -1,15 +1,6 @@
 name: Generar documentación
 
 on:
-  push:
-    branches:
-      - feature/generar-documentacion
-    paths:
-      - 'docs/**'
-      - 'mkdocs.yml'
-      - 'requirements.txt'
-      - '.github/workflows/generar-documentacion.yml'
-
   workflow_dispatch:
 
 permissions:
