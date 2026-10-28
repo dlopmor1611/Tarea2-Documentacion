@@ -16,4 +16,4 @@ nav:
   - Inicio: index.md
   - Estructura del proyecto: estructura.md
   - Acciones locales: acciones-locales.md
-  - Calculadora Python: Calc.py
+  - Calculadora científica: calculadora.md
