@@ -1,9 +1,19 @@
 site_name: Documentación del proyecto
-site_description: Documentación técnica del proyecto y sus acciones locales
+site_description: Documentación de la calculadora y las acciones locales
+
 docs_dir: docs
 site_dir: site
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths:
+            - src
 
 nav:
   - Inicio: index.md
   - Estructura del proyecto: estructura.md
   - Acciones locales: acciones-locales.md
+  - Calculadora Python: calculadora.md
