@@ -1,14 +1,24 @@
-name: Generar documentación
+name: Generar y publicar documentación
 
 on:
   workflow_dispatch:
 
 permissions:
   contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
 
 jobs:
   generar-documentacion:
     runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: Descargar repositorio
@@ -24,12 +34,20 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Comprobar configuración
+        run: |
+          ls -la
+          test -f mkdocs.yml
+          test -d docs
+
       - name: Generar documentación HTML
         run: mkdocs build --strict
 
-      - name: Guardar documentación generada
-        uses: actions/upload-artifact@v4
+      - name: Preparar documentación para Pages
+        uses: actions/upload-pages-artifact@v4
         with:
-          name: documentacion-html
           path: site/
-          if-no-files-found: error
+
+      - name: Publicar en GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
