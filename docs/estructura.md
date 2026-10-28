@@ -4,13 +4,6 @@
 
 | Archivo o directorio | Descripción                       |
 | -------------------- | --------------------------------- |
-| `README.md`          | Presentación del proyecto.        |
-| `CONTRIBUTING.md`    | Normas para contribuir.           |
-| `CHANGELOG.md`       | Historial de cambios.             |
-| `LICENSE`            | Licencia del proyecto.            |
-| `SECURITY.md`        | Información sobre seguridad.      |
-| `.gitignore`         | Archivos excluidos de Git.        |
-| `.env.example`       | Ejemplo de configuración.         |
 | `requirements.txt`   | Dependencias de Python.           |
 | `docs/`              | Documentación del proyecto.       |
 | `.github/workflows/` | Workflows de GitHub Actions.      |
